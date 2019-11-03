@@ -20,7 +20,7 @@ public class ParserService {
     @Autowired
     FileProviderService fileService;
 
-    public void getFileInput(MultipartFile file) throws IOException {
+    public ParsedComment getFileInput(MultipartFile file) throws IOException {
         String fileName = file.getOriginalFilename();
         int i = fileName.lastIndexOf('.');
         if (i <= 0) {
@@ -32,8 +32,9 @@ public class ParserService {
             //
         }
         List<String> lines = fileService.provider(file.getInputStream());
-        ParsedComment comments = parse(lines, regex);
-        System.out.println(comments.toString());
+        ParsedComment result = parse(lines, regex);
+        result.setFileName(fileName);
+        return result;
     }
 
 

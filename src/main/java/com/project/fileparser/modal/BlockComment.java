@@ -25,12 +25,12 @@ public class BlockComment {
         return blockComment.size() == 0;
     }
 
-    public String toString() {
-        String comment = "";
-        for (LineComment line: blockComment) {
-            comment += line.toString();
-        }
-        return comment;
+    public List<LineComment> getBlockComment() {
+        return blockComment;
+    }
+
+    public void setBlockComment(List<LineComment> blockComment) {
+        this.blockComment = blockComment;
     }
 
     public int getNumTODO() {

@@ -8,6 +8,7 @@ public class ParsedComment {
     private List<BlockComment> blockComments;
     private int totalLineNum;
     private int totalTODONum;
+    private String fileName;
 
     public ParsedComment() {
         totalLineNum = 0;
@@ -65,6 +66,22 @@ public class ParsedComment {
         this.totalLineNum = totalLineNum;
     }
 
+    public int getTotalTODONum() {
+        return totalTODONum;
+    }
+
+    public void setTotalTODONum(int totalTODONum) {
+        this.totalTODONum = totalTODONum;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+    /*
     public String toString() {
         String result = "======== All line comments: ========================" + System.lineSeparator();
         result += System.lineSeparator();
@@ -85,5 +102,5 @@ public class ParsedComment {
         result += "======== Total number of TODOs: " + totalTODONum  + System.lineSeparator();
 
         return result;
-    }
+    }*/
 }

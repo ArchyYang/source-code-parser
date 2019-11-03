@@ -1,5 +1,6 @@
 package com.project.fileparser.modal;
 
+
 public class LineComment {
     private boolean hasTODO = false;
     private final String TODO = "TODO";
@@ -19,11 +20,11 @@ public class LineComment {
         return hasTODO;
     }
 
-    public int getStartLineNumber() {
+    public int getLineNumber() {
         return lineNumber;
     }
 
-    public void setStartLineNumber(int lineNumber) {
+    public void setLineNumber(int lineNumber) {
         this.lineNumber = lineNumber;
     }
 
@@ -33,9 +34,5 @@ public class LineComment {
 
     public String getComment() {
         return comment;
-    }
-
-    public String toString() {
-        return lineNumber + ":    " + comment + System.lineSeparator();
     }
 }
